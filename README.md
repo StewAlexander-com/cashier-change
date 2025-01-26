@@ -1,4 +1,6 @@
 # cashier-change
-Cashier Change Python Script - Figures out and displays the least amount of bills and coins needed as change for a purchase
+Cashier Change Python Script
+## What does it do?
+* Figures out the optimum change to provide during checkout
 ------
 * Initial code added 01/16/2025
