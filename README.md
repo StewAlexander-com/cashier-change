@@ -1,12 +1,17 @@
 # cashier-change
 Cashier Change Python Script
-## What does it do?
-* Figures out the optimum change to provide during checkout
-------
-* Initial code added 01/16/2025
 
-## Quickstart
+## Overview
+Calculates the optimal change to return for a cash transaction and prints a clear, human-friendly breakdown of bills and coins. 💵
 
+## Installation
+- Ensure Python 3.8+ is installed
+- Clone this repository
+- (Optional) Make the launcher executable: `chmod +x run.sh`
+
+No additional dependencies are required.
+
+## Quick Start
 Run interactively (recommended):
 
 ```bash
@@ -35,14 +40,11 @@ Show version/help:
 ./run.sh calc --help
 ```
 
-## Project structure
+## Why
+Point-of-sale workflows need fast, reliable, and minimal-change breakdowns. This tool:
+- Uses integer cents to avoid floating-point rounding errors
+- Produces an optimal, easy-to-read list with correct singular/plural names
+- Supports both an interactive flow and a one-shot CLI for automation
 
-- `change_logic.py`: Core denomination math and output formatting
-- `change-calc.py`: Interactive loop and session handling
-- `start.py`: Unified CLI entrypoint (interactive and calc modes)
-- `run.sh`: Convenience launcher
-
-## Notes
-
-- Amounts are handled in cents to avoid floating-point errors.
-- Interactive mode validates inputs and allows easy repeat runs.
+## Updates
+- 2025-01-16 — v1.0.0: Initial release (interactive and calc modes; integer-cents arithmetic; `run.sh` launcher)
