@@ -6,8 +6,31 @@ Calculates the optimal change to return for a cash transaction and prints a clea
 
 ## Installation
 - Ensure Python 3.8+ is installed
-- Clone this repository
-- (Optional) Make the launcher executable: `chmod +x run.sh`
+
+Clone this repository (choose one):
+
+HTTPS
+```bash
+git clone https://github.com/StewAlexander-com/cashier-change.git
+cd cashier-change
+```
+
+SSH
+```bash
+git clone git@github.com:StewAlexander-com/cashier-change.git
+cd cashier-change
+```
+
+Optional (macOS/Linux): make the launcher executable
+```bash
+chmod +x run.sh
+```
+
+Optional: create a virtual environment (no extra packages required)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
 No additional dependencies are required.
 
