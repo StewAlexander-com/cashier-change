@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cashier Change · Stew Alexander</title>
+  <meta name="description" content="Enter a sale total and the cash received to get the fewest bills and coins to hand back. Works offline.">
+  <meta name="theme-color" content="#131922">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Change">
+  <meta property="og:title" content="Cashier Change">
+  <meta property="og:description" content="The fewest bills and coins to hand back for any cash sale.">
+  <meta property="og:type" content="website">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#due">Skip to calculator</a>
+
+  <header class="masthead">
+    <a class="brand" href="https://stewalexander.com" rel="noopener">Stew Alexander</a>
+    <span class="masthead-tag">Systems &amp; Tools</span>
+  </header>
+
+  <main class="page">
+    <section class="card card--mint" aria-labelledby="title">
+      <p class="eyebrow">Point of sale</p>
+      <h1 id="title">Cashier Change</h1>
+      <p class="lede">Enter the sale total and the cash received. You get the fewest bills and coins to hand back.</p>
+
+      <hr class="rule">
+
+      <form id="calc" class="calc" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="due">Amount due</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input id="due" name="due" inputmode="decimal" enterkeyhint="next"
+                   placeholder="0.00" aria-describedby="due-error" spellcheck="false">
+          </div>
+          <p class="field-error" id="due-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="tendered">Cash received</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input id="tendered" name="tendered" inputmode="decimal" enterkeyhint="done"
+                   placeholder="0.00" aria-describedby="tendered-error" spellcheck="false">
+          </div>
+          <p class="field-error" id="tendered-error" role="alert"></p>
+          <div class="quick" id="quick" role="group" aria-label="Common cash amounts" hidden></div>
+        </div>
+
+        <div class="actions">
+          <p class="hint" id="hint">Results update as you type. Press <kbd>Esc</kbd> to start a new sale.</p>
+          <button type="reset" class="btn" id="clear">New sale</button>
+        </div>
+      </form>
+    </section>
+
+    <p class="sr-only" id="announce" role="status" aria-live="polite" aria-atomic="true"></p>
+
+    <section class="result" id="result" aria-label="Result">
+      <div class="empty">Try a total of <strong>13.27</strong> paid with <strong>20.00</strong>.</div>
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 class="eyebrow eyebrow--section" id="about-title">How it works</h2>
+      <ul class="notes">
+        <li>
+          <span class="tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><circle cx="12" cy="12" r="2.5"/><path d="M7 10v4M17 10v4"/></svg>
+          </span>
+          <div>
+            <h3>Exact to the cent</h3>
+            <p>All math runs in whole cents, so you never get floating-point rounding errors.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 18h16M7 18V9M12 18V5M17 18v-6"/></svg>
+          </span>
+          <div>
+            <h3>Fewest pieces</h3>
+            <p>Starts with the largest bill and works down to the penny.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12.5a7 7 0 0 1 14 0"/><path d="M8.5 15a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="18" r="1"/><path d="M3 3l18 18"/></svg>
+          </span>
+          <div>
+            <h3>Works offline</h3>
+            <p>Install it on your home screen. It runs with no connection.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="link" href="https://github.com/StewAlexander-com/cashier-change" rel="noopener">Source &amp; license <span class="ext" aria-hidden="true">↗</span></a>
+    <button type="button" class="btn btn--quiet" id="install" hidden>Install app</button>
+    <span class="muted">v2.0 · GPL-3.0</span>
+  </footer>
+
+  <script src="change.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
