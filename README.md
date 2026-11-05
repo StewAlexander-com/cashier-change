@@ -4,6 +4,27 @@ Cashier Change Python Script
 ## Overview
 Calculates the optimal change to return for a cash transaction and prints a clear, human-friendly breakdown of bills and coins. 💵
 
+## Web app (PWA)
+A browser version lives in [`docs/`](docs/) and is served by GitHub Pages:
+**https://stewalexander-com.github.io/cashier-change/**
+
+- Live results as you type, with one-tap common cash amounts ("Exact", next dollar, $20, …)
+- Installable to your home screen and works fully offline
+- Same integer-cents logic as the Python version, checked by a parity test
+- Prefill with a link: `?due=13.27&tendered=20`
+
+To publish: **Settings → Pages → Deploy from a branch → `main` / `/docs`**.
+
+Run it locally:
+```bash
+cd docs && python3 -m http.server 8000   # then open http://localhost:8000
+```
+
+Tests (Node 18+ and Python 3):
+```bash
+node --test tests/change.test.js
+```
+
 ## Installation
 - Ensure Python 3.8+ is installed
 
@@ -70,4 +91,5 @@ Point-of-sale workflows need fast, reliable, and minimal-change breakdowns. This
 - Supports both an interactive flow and a one-shot CLI for automation
 
 ## Updates
+- 2026-11-05 — v2.0.0: Installable offline web app (PWA) in `docs/`; fixed the CLI failing to start (`change-calc.py` renamed to `change_calc.py`)
 - 2025-01-16 — v1.0.0: Initial release (interactive and calc modes; integer-cents arithmetic; `run.sh` launcher)
